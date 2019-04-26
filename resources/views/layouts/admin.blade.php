@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIGEP - Sistema de Gestão de Equipamentos para Proteção Policial</title>
+    <title>Controle Carga | 6º BPM</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -27,9 +27,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>S</b></span>
+          <span class="logo-mini"><b>CC</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">SIGEP</span>
+          <span class="logo-lg">Controle Carga</span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->

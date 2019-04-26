@@ -18,27 +18,27 @@
             
             <div class="form-group">
                 <label for="idTipo">Tipo</label>
-                    <select class="form-control" name="idTipo">
-                        @foreach ($tipos->all() as $t)
-					        <option value = "$t->id">{{$t->descricao}}</option>
-				        @endforeach
-                    </select>
+				<select class="form-control" name="idTipo">
+					@foreach ($tipos->all() as $t)
+						<option value = "{{ $t->id }}">{{$t->descricao}}</option>
+					@endforeach
+				</select>
             </div>
             <div class="form-group">
                 <label for="idFabricante">Fabricante</label>
-                    <select class="form-control" name="idFabricante">
-                        @foreach ($fabricantes->all() as $f)
-					        <option value = "$f->id">{{$f->descricao}}</option>
-				        @endforeach
-                    </select>
+				<select class="form-control" name="idFabricante">
+					@foreach ($fabricantes->all() as $f)
+						<option value = "{{ $f->id }}">{{$f->descricao}}</option>
+					@endforeach
+				</select>
             </div>
             <div class="form-group">
                 <label for="idSituacao">Situação</label>
-                    <select class="form-control" name="idSituacao">
-                        @foreach ($situacoes->all() as $s)
-					        <option value = "$s->id">{{$s->descricao}}</option>
-				        @endforeach
-                    </select>
+				<select class="form-control" name="idSituacao">
+					@foreach ($situacoes->all() as $s)
+						<option value = "{{ $s->id }}">{{$s->descricao}}</option>
+					@endforeach
+				</select>
             </div>                          
             <div class="form-group">
             	<label for="modelo">Modelo</label>
