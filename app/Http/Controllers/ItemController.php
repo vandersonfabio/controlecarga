@@ -130,4 +130,21 @@ class ItemController extends Controller
         //$fabricante->delete();
         return Redirect::to('item/item');
     }
+
+    public function alocar($id){
+        
+        $affected = DB::update('update item set idSituacao = 2 where id = ?', [$id]);
+    }
+
+
+    public function desalocar($id){
+        
+        $affected = DB::update('update item set idSituacao = 1 where id = ?', [$id]);
+
+        //$item = Item::findOrFail($id);
+        //$item->idSituacao = 1;
+        //$item->update();
+        //Caso queira realmente deletar o registro do banco, use o método DELETE()
+        //$fabricante->delete();        
+    }
 }

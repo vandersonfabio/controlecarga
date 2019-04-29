@@ -12,14 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 
-Route::resource('item/fabricante', 'FabricanteController');
-Route::resource('item/tipo', 'TipoController');
-Route::resource('item/situacao', 'SituacaoController');
-Route::resource('item/item', 'ItemController');
 
-Route::resource('policial', 'PolicialController');
-Route::resource('setor', 'SetorController');
+Auth::routes();
+
+Route::group(['middleware'=>['auth']], function(){
+    Route::get('/home', 'HomeController@index')->name('policial');
+    Route::resource('item/fabricante', 'FabricanteController');
+    Route::resource('item/tipo', 'TipoController');
+    Route::resource('item/situacao', 'SituacaoController');
+    Route::resource('item/item', 'ItemController');
+
+    Route::resource('policial', 'PolicialController');
+    Route::resource('setor', 'SetorController');
+    Route::resource('alocacao', 'AlocacaoController');
+});
+
