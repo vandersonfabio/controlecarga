@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware'=>['auth']], function(){
-    Route::get('/home', 'HomeController@index')->name('policial');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('item/fabricante', 'FabricanteController');
     Route::resource('item/tipo', 'TipoController');
     Route::resource('item/situacao', 'SituacaoController');
@@ -30,4 +30,3 @@ Route::group(['middleware'=>['auth']], function(){
     Route::resource('setor', 'SetorController');
     Route::resource('alocacao', 'AlocacaoController');
 });
-

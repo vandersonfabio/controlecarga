@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
 
   </head>
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="hold-transition skin-purple sidebar-mini">
     <div class="wrapper">
 
       <header class="main-header">
@@ -47,16 +47,16 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">Vanderson Fábio de Araújo</span>
+                  <span class="hidden-xs">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    
                     <p>
                       www.vandersonfabio.com.br - Desenvolvimento de Sistemas
                       <small>www.youtube.com/</small>
                     </p>
+                    <button type="button" action="{{ route('logout') }}" class="btn btn-cancel btn-block">Logout</button>
                   </li>
                   
                   <!-- Menu Footer-->
