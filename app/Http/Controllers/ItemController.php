@@ -39,7 +39,7 @@ class ItemController extends Controller
                     'f.descricao as descricaoFabricante',
                     's.descricao as descricaoSituacao'
                 )             
-                ->where('i.modelo', 'LIKE', "%".$query.'%')
+                ->where('i.numTombo', 'LIKE', "%".$query.'%')
                 ->where('i.isActive', 1)
                 ->orderBy('i.id', 'desc')
                 ->paginate(10);
@@ -131,20 +131,12 @@ class ItemController extends Controller
         return Redirect::to('item/item');
     }
 
-    public function alocar($id){
-        
+    public function alocar($id){        
         $affected = DB::update('update item set idSituacao = 2 where id = ?', [$id]);
     }
 
 
-    public function desalocar($id){
-        
-        $affected = DB::update('update item set idSituacao = 1 where id = ?', [$id]);
-
-        //$item = Item::findOrFail($id);
-        //$item->idSituacao = 1;
-        //$item->update();
-        //Caso queira realmente deletar o registro do banco, use o método DELETE()
-        //$fabricante->delete();        
+    public function desalocar($id){        
+        $affected = DB::update('update item set idSituacao = 1 where id = ?', [$id]);        
     }
 }

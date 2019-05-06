@@ -31,7 +31,7 @@ class SetorController extends Controller
                 )             
                 ->where('s.descricao', 'LIKE', "%".$query.'%')
                 ->where('s.isActive', 1)
-                ->orderBy('s.id', 'desc')
+                ->orderBy('s.descricao', 'asc')
                 ->paginate(10);
             
             return view('setor.index', [

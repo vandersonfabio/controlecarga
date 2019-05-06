@@ -32,7 +32,7 @@ class PolicialController extends Controller
                 )             
                 ->where('pol.nomeCompleto', 'LIKE', "%".$query.'%')
                 ->where('pol.isActive', 1)
-                ->orderBy('pol.id', 'desc')
+                ->orderBy('pol.idPosto', 'desc')
                 ->paginate(10);
             
             return view('policial.index', [
