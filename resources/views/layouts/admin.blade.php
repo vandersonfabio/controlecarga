@@ -87,57 +87,36 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Armamentos</span>
+                <span>Itens</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="estoque/produto"><i class="fa fa-circle-o"></i> Armas e equipamentos</a></li>
-                <li><a href="fabricante"><i class="fa fa-circle-o"></i> Fabricantes</a></li>
-                <li><a href="tipo"><i class="fa fa-circle-o"></i> Tipos</a></li>
+                <li><a href="../item/item"><i class="fa fa-circle-o"></i> Itens</a></li>
+                <li><a href="../item/tipo"><i class="fa fa-circle-o"></i> Tipos</a></li>
+                <li><a href="../item/fabricante"><i class="fa fa-circle-o"></i> Fabricantes</a></li>                
               </ul>
             </li>
             <li>
-              <a href="http://127.0.0.1:8000/unidade">
-                <i class="fa fa-info-circle"></i> <span>Unidades</span>
+              <a href="../../alocacao">
+                <i class="fa fa-info-circle"></i> <span>Alocações</span>
               </a>
-            </li>
+            </li>            
             
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Cautelas</span>
+                <span>Setores</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="compras/entrada"><i class="fa fa-circle-o"></i> Entradas</a></li>
-                <li><a href="compras/fornecedor"><i class="fa fa-circle-o"></i> Fornecedores</a></li>
+                <li><a href="../../setor"><i class="fa fa-circle-o"></i> Setores</a></li>
+                <li><a href="../../policial"><i class="fa fa-circle-o"></i> Responsáveis</a></li>
               </ul>
-            </li>
-            <li class="treeview">
+            </li>      
+            
+            <li>
               <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Inspeções</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="vendas/venda"><i class="fa fa-circle-o"></i> Vendas</a></li>
-                <li><a href="vendas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
-              </ul>
-            </li>
-                       
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Login</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="configuracao/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                
-              </ul>
-            </li>
-             <li>
-              <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Ajuda</span>
+                <i class="fa fa-plus-square"></i> <span>Relatórios</span>
                 <small class="label pull-right bg-red">PDF</small>
               </a>
             </li>
@@ -154,9 +133,6 @@
       </aside>
 
 
-
-
-
        <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -168,7 +144,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Gestão de Equipamentos para Proteção Policial</h3>
+                  <h3 class="box-title">Sistema de Gestão de Material Carga | 6º BPM</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -183,8 +159,7 @@
                               @yield('conteudo')
                               <!--Fim Conteudo-->
                            </div>
-                        </div>
-                        
+                        </div>                        
                       </div>
                     </div><!-- /.row -->
                 </div><!-- /.box-body -->

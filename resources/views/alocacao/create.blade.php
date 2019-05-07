@@ -21,7 +21,7 @@
                 <label for="idItem">Item</label>
 				<select class="form-control" name="idItem">
 					@foreach ($itens->all() as $i)
-						<option value = "{{ $i->id }}">{{$i->numTombo}} - {{$i->modelo}}</option>
+						<option value = "{{ $i->id }}">{{$i->numTombo}} - {{$i->descricaoTipo}} {{$i->descricaoFabricante}} {{$i->modelo}} (Serial: {{$i->numSerie}})</option>
 					@endforeach
 				</select>
 			</div>

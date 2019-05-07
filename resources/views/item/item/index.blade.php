@@ -27,9 +27,13 @@
                     <td>{{ $it->descricaoTipo}}</td>
 					<td>{{ $it->descricaoFabricante}}</td>
                     <td>{{ $it->modelo}}</td>
-                    <td>{{ $it->numSerie}}</td>
+                    <td>{{ $it->numSerie}}</td>                    
                     <td>{{ $it->numTombo}}</td>
-                    <td>{{ $it->descricaoSituacao}}</td>                    
+                    @if ($it->descricaoSituacao == "Disponível")
+                        <td style="color:green">{{ $it->descricaoSituacao}}</td>
+					@else
+                        <td>{{ $it->descricaoSituacao}}</td>
+                    @endif
 					<td>
 						<a href="{{URL::action('ItemController@edit',$it->id)}}"><button class="btn btn-info">Editar</button></a>
                          <a href="" data-target="#modal-delete-{{$it->id}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>

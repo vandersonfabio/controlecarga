@@ -46,7 +46,7 @@ class AlocacaoController extends Controller
                 ->where('i.isActive', 1)
                 ->where('a.isActive', 1)
                 ->orderBy('a.id', 'desc')
-                ->paginate(10);
+                ->paginate(7);
             
             return view('alocacao.index', [
                 "listaAlocacoes" => $alocacoesEncontradas, 
@@ -60,14 +60,37 @@ class AlocacaoController extends Controller
         $setores = DB::table('setor')
                         ->where('isActive',1)
                         ->get();
-        $itens = DB::table('item')
-                        ->where('isActive',1)
-                        ->where('idSituacao',1)
+        $itens = DB::table('item as i')
+                        ->join('situacao as s', 'i.idSituacao', '=', 's.id')
+                        ->join('tipo_item as t', 'i.idTipo', '=', 't.id')
+                        ->join('fabricante as f', 'i.idFabricante', '=', 'f.id')   
+                        ->select(
+                            'i.id',
+                            'i.modelo',
+                            'i.numSerie',
+                            'i.numTombo',
+                            'i.observacoes',
+                            'i.isActive',
+                            'i.idTipo',
+                            'i.idFabricante',
+                            'i.idSituacao',
+                            't.descricao as descricaoTipo',
+                            'f.descricao as descricaoFabricante',
+                            's.descricao as descricaoSituacao'
+                        )                        
+                        ->where('i.isActive', 1)
+                        ->where('s.descricao','=','Disponível')
+                        ->orderBy('i.numTombo', 'asc')
                         ->get();
         return view("alocacao.create",[
             "setores"=>$setores,
             "itens"=>$itens
         ]);
+
+        
+
+
+
     }
 
     public function store(AlocacaoFormRequest $request){

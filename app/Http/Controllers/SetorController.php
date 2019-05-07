@@ -32,7 +32,7 @@ class SetorController extends Controller
                 ->where('s.descricao', 'LIKE', "%".$query.'%')
                 ->where('s.isActive', 1)
                 ->orderBy('s.descricao', 'asc')
-                ->paginate(10);
+                ->paginate(7);
             
             return view('setor.index', [
                 "listaSetores" => $setoresEncontrados, 

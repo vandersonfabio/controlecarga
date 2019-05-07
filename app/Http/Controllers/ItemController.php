@@ -42,7 +42,7 @@ class ItemController extends Controller
                 ->where('i.numTombo', 'LIKE', "%".$query.'%')
                 ->where('i.isActive', 1)
                 ->orderBy('i.id', 'desc')
-                ->paginate(10);
+                ->paginate(7);
             
             return view('item.item.index', [
                 "listaItens" => $itensEncontrados, 
