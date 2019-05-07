@@ -56,7 +56,7 @@
                       www.vandersonfabio.com.br - Desenvolvimento de Sistemas
                       <small>www.youtube.com/</small>
                     </p>
-                    <button type="button" action="{{ route('logout') }}" class="btn btn-cancel btn-block">Logout</button>
+                    <a href="{{ route('logout') }}" class="btn btn-default btn-flat">SAIR DO SISTEMA</a>
                   </li>
                   
                   <!-- Menu Footer-->

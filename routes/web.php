@@ -30,3 +30,5 @@ Route::group(['middleware'=>['auth']], function(){
     Route::resource('setor', 'SetorController');
     Route::resource('alocacao', 'AlocacaoController');
 });
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
