@@ -46,7 +46,7 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <small class="bg-red">Online</small>
+                  <small class="bg-red">Usuário logado:</small>
                   <span class="hidden-xs">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu">
@@ -95,12 +95,7 @@
                 <li><a href="../item/tipo"><i class="fa fa-circle-o"></i> Tipos</a></li>
                 <li><a href="../item/fabricante"><i class="fa fa-circle-o"></i> Fabricantes</a></li>                
               </ul>
-            </li>
-            <li>
-              <a href="../../alocacao">
-                <i class="fa fa-info-circle"></i> <span>Alocações</span>
-              </a>
-            </li>            
+            </li>                     
             
             <li class="treeview">
               <a href="#">
@@ -115,7 +110,13 @@
             </li>      
             
             <li>
-              <a href="#">
+              <a href="../../alocacao">
+                <i class="fa fa-info-circle"></i> <span>Alocações</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../../relatorio">
                 <i class="fa fa-plus-square"></i> <span>Relatórios</span>
                 <small class="label pull-right bg-red">PDF</small>
               </a>
@@ -172,9 +173,9 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Versão</b> 5.3.0
+          <b>Laravel</b> Versão 5.8.14
         </div>
-        <strong>Copyright &copy; 2015-2020 <a href="http://www.facebook.com.br/vanderson.fabio" target="_blank">VF-Design</a>.</strong> Todos os direitos reservados.
+        <strong>Copyright &copy; 2019-2019 <a href="https://github.com/vandersonfabio" target="_blank">Sd PM Vanderson</a>.</strong> Todos os direitos reservados.
       </footer>
 
       

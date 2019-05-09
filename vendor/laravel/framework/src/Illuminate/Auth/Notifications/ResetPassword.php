@@ -57,11 +57,11 @@ class ResetPassword extends Notification
         }
 
         return (new MailMessage)
-            ->subject(Lang::getFromJson('Reset Password Notification'))
-            ->line(Lang::getFromJson('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::getFromJson('Reset Password'), url(config('app.url').route('password.reset', ['token' => $this->token], false)))
-            ->line(Lang::getFromJson('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.users.expire')]))
-            ->line(Lang::getFromJson('If you did not request a password reset, no further action is required.'));
+            ->subject(Lang::getFromJson('Redefinição de senha'))
+            ->line(Lang::getFromJson('Você está recebendo este e-mail porque nós recebemos um pedido de redefinição de senha.'))
+            ->action(Lang::getFromJson('Redefinir senha'), url(config('app.url').route('password.reset', ['token' => $this->token], false)))
+            ->line(Lang::getFromJson('Este link de recuperação irá expirar em :count minutos.', ['count' => config('auth.passwords.users.expire')]))
+            ->line(Lang::getFromJson('Se você não solicitou a redefinição, não precisa fazer nada. Sua senha continuará a mesma. :)'));
     }
 
     /**

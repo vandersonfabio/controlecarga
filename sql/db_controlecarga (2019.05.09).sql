@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Maio-2019 às 14:44
+-- Generation Time: 09-Maio-2019 às 16:30
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -43,7 +43,15 @@ CREATE TABLE `alocacao` (
 --
 
 INSERT INTO `alocacao` (`id`, `dataEntrega`, `dataBaixa`, `userBaixa`, `isActive`, `idItem`, `idSetor`) VALUES
-(1, '06/05/2019', '06/05/2019', 'vanderson.fabio@gmail.com', 0, 1, 1);
+(1, '06/05/2019', '06/05/2019', 'vanderson.fabio@gmail.com', 0, 1, 1),
+(2, '07/05/2019', '07/05/2019', 'vanderson.fabio@gmail.com', 0, 5, 1),
+(3, '07/05/2019', NULL, NULL, 1, 12, 1),
+(4, '07/05/2019', NULL, NULL, 1, 11, 1),
+(5, '07/05/2019', NULL, NULL, 1, 2, 1),
+(6, '07/05/2019', NULL, NULL, 1, 1, 1),
+(7, '07/05/2019', NULL, NULL, 1, 10, 1),
+(8, '07/05/2019', NULL, NULL, 1, 9, 1),
+(9, '09/05/2019', '09/05/2019', 'vanderson.fabio@gmail.com', 0, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -90,14 +98,18 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `modelo`, `numSerie`, `numTombo`, `observacoes`, `isActive`, `idTipo`, `idFabricante`, `idSituacao`) VALUES
-(1, 'DC1C-S', '01014602011802', '005153', 'Sem observações', 1, 1, 1, 1),
-(2, 'DC1C-S', '01014602011758', '004927', 'Sem observações', 1, 1, 1, 1),
+(1, 'DC1C-S', '01014602011802', '005153', 'Sem observações', 1, 1, 1, 2),
+(2, 'DC1C-S', '01014602011758', '004927', 'Sem observações', 1, 1, 1, 2),
 (3, 'DC1C-S', '01014602010817', '005093', 'Sem observações', 1, 1, 1, 1),
 (4, 'DC1C-S', '01014602010417', '004987', 'Sem observações', 1, 1, 1, 1),
 (5, 'DC1C-S', '01014602010545', '005077', 'Sem observações', 1, 1, 1, 1),
 (6, 'DC1C-S', '01014602020097', '005005', 'Sem observações', 1, 1, 1, 1),
-(7, 'DC1C-S', '01014602020077', '005151', 'Sem observações', 1, 1, 1, 2),
-(8, 'DC1C-S', '01014602020057', '005149', 'Sem observações', 1, 1, 1, 1);
+(7, 'DC1C-S', '01014602020077', '005151', 'Sem observações', 1, 1, 1, 1),
+(8, 'DC1C-S', '01014602020057', '005149', 'Sem observações', 1, 1, 1, 1),
+(9, '20M35PD-M', '151002433', '006762', 'Sem observações', 1, 2, 1, 2),
+(10, '20M35PD-M', '151000352', '006646', 'Sem observações', 1, 2, 1, 2),
+(11, 'ML1000B1', '0665', '001983', 'Sem observações', 1, 3, 2, 2),
+(12, 'ML1000B1', '00033', '001960', 'Usado no rack da rede', 1, 3, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -130,6 +142,13 @@ CREATE TABLE `password_resets` (
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('vanderson.fabio@gmail.com', '$2y$10$Rx2AqjFGA.Mj/yDC05uGU.4bopEwqXp4mD14dtxUGiH6.pLwG3cA2', '2019-05-08 11:55:35');
 
 -- --------------------------------------------------------
 
@@ -262,7 +281,14 @@ CREATE TABLE `tipo_item` (
 INSERT INTO `tipo_item` (`id`, `descricao`, `isActive`) VALUES
 (1, 'Microcomputador', 1),
 (2, 'Monitor', 1),
-(3, 'Estabilizador', 1);
+(3, 'Estabilizador', 1),
+(4, 'Switch', 1),
+(5, 'Roteador', 1),
+(6, 'Nobreak', 1),
+(7, 'Modem', 1),
+(8, 'Mesa', 1),
+(9, 'Cadeira acolchoada', 1),
+(10, 'Cadeira plástica', 1);
 
 -- --------------------------------------------------------
 
@@ -286,7 +312,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Vanderson Fabio', 'vanderson.fabio@gmail.com', NULL, '$2y$10$MCmMlMcMynsSa1n/kRWZGeOJcK7t/CIvF0XJbpU7VkiPPMiUK/6zu', NULL, '2019-05-06 11:51:32', '2019-05-06 11:51:32');
+(1, 'Vanderson Fabio', 'vanderson.fabio@gmail.com', NULL, '$2y$10$oBH8NUeCQDNMhmpJhjVY8O2.8SFo9i8F4bc6gvEea8VqGFwB7L.4y', '3v3I8goI8BpIQmRfwJteJRw5mAJrycwdDwToNuO64knozf0SPpdXJraR25Gk', '2019-05-06 11:51:32', '2019-05-08 11:38:52');
 
 --
 -- Indexes for dumped tables
@@ -374,7 +400,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `alocacao`
 --
 ALTER TABLE `alocacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `fabricante`
@@ -386,7 +412,7 @@ ALTER TABLE `fabricante`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -422,7 +448,7 @@ ALTER TABLE `situacao`
 -- AUTO_INCREMENT for table `tipo_item`
 --
 ALTER TABLE `tipo_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`

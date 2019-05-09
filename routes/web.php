@@ -29,6 +29,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::resource('policial', 'PolicialController');
     Route::resource('setor', 'SetorController');
     Route::resource('alocacao', 'AlocacaoController');
+    Route::resource('relatorio', 'RelatorioController');
 });
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
