@@ -37,7 +37,7 @@
 
             <div class="form-group">
             	<button class="btn btn-primary" type="submit">Salvar</button>
-            	<button class="btn btn-danger" type="reset">Cancelar</button>
+            	<button class="btn btn-danger" type="button" onClick="history.go(-1)">Cancelar</button>
             </div>
 
 			{!!Form::close()!!}		

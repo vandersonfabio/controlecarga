@@ -59,6 +59,7 @@ class AlocacaoController extends Controller
     public function create(){
         $setores = DB::table('setor')
                         ->where('isActive',1)
+                        ->orderBy('descricao', 'asc')
                         ->get();
         $itens = DB::table('item as i')
                         ->join('situacao as s', 'i.idSituacao', '=', 's.id')

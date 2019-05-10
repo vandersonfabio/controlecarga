@@ -20,7 +20,7 @@
                     <td>{{ $set->descricao}}</td>
 					<td>{{ $set->siglaPostoResponsavel}} {{ $set->nomeFuncionalResponsavel}}</td>                    
 					<td>
-						<a href="#"><button class="btn btn-info">Gerar Relatório</button></a>                        
+						<a href="{{URL::action('RelatorioController@edit',$set->id)}}"><button class="btn btn-info">Gerar Relatório</button></a>
 					</td>
 				</tr>				
 				@endforeach

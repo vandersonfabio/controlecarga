@@ -55,9 +55,11 @@ class ItemController extends Controller
     public function create(){
         $fabricantes = DB::table('fabricante')
                         ->where('isActive',1)
+                        ->orderBy('descricao','asc')
                         ->get();
         $tipos = DB::table('tipo_item')
                         ->where('isActive',1)
+                        ->orderBy('descricao','asc')
                         ->get();
         $situacoes = DB::table('situacao')
                         ->where('isActive',1)
@@ -92,8 +94,8 @@ class ItemController extends Controller
     public function edit($id){
 
         $item = Item::findOrFail($id);
-        $fabricantes = DB::table('fabricante')->where('isActive',1)->get();
-        $tipos = DB::table('tipo_item')->where('isActive',1)->get();
+        $fabricantes = DB::table('fabricante')->where('isActive',1)->orderBy('descricao','asc')->get();
+        $tipos = DB::table('tipo_item')->where('isActive',1)->orderBy('descricao','asc')->get();
         $situacoes = DB::table('situacao')->where('isActive',1)->get();
 
         return view("item.item.edit", 

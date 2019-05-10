@@ -1,4 +1,4 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
 @section('conteudo')
 <div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -30,7 +30,7 @@
 							@if ($p->id == $setor->idResponsavel)
         						selected="selected"
 							@endif>
-								{{$p->matricula}} - {{$p->nomeCompleto}}
+								{{$p->matricula}} - {{$p->siglaPosto}} {{$p->nomeCompleto}} ({{$p->nomeFuncional}})
 						</option>
 					@endforeach
 				</select>

@@ -26,7 +26,8 @@
 			</div>
 			<div class="form-group">
             	<label for="matricula">Matrícula</label>
-            	<input type="text" name="matricula" class="form-control" placeholder="Matrícula do policial...">
+            	<input type="text" name="matricula" class="form-control" 
+                data-mask="000.000-0" data-mask-selectonfocus="true" placeholder="Matrícula do policial...">
             </div>
             <div class="form-group">
             	<label for="nomeFuncional">Nome Funcional</label>
@@ -38,7 +39,7 @@
             </div>            
             <div class="form-group">
             	<button class="btn btn-primary" type="submit">Salvar</button>
-            	<button class="btn btn-danger" type="reset">Cancelar</button>
+            	<button class="btn btn-danger" type="button" onClick="history.go(-1)">Cancelar</button>
             </div>
 
 			{!!Form::close()!!}		

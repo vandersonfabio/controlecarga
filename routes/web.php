@@ -25,11 +25,10 @@ Route::group(['middleware'=>['auth']], function(){
     Route::resource('item/tipo', 'TipoController');
     Route::resource('item/situacao', 'SituacaoController');
     Route::resource('item/item', 'ItemController');
-
     Route::resource('policial', 'PolicialController');
     Route::resource('setor', 'SetorController');
     Route::resource('alocacao', 'AlocacaoController');
-    Route::resource('relatorio', 'RelatorioController');
+    Route::resource('relatorio', 'RelatorioController');    
 });
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');

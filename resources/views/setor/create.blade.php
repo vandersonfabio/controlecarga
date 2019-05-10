@@ -25,14 +25,14 @@
                 <label for="idResponsavel">Responsável</label>
 				<select class="form-control" name="idResponsavel">
 					@foreach ($policiais->all() as $p)
-						<option value = "{{ $p->id }}">{{$p->matricula}} - {{$p->nomeCompleto}}</option>
+						<option value = "{{ $p->id }}">{{$p->matricula}} - {{$p->siglaPosto}} {{$p->nomeCompleto}} ({{$p->nomeFuncional}})</option>
 					@endforeach
 				</select>
 			</div>
 
             <div class="form-group">
             	<button class="btn btn-primary" type="submit">Salvar</button>
-            	<button class="btn btn-danger" type="reset">Cancelar</button>
+            	<button class="btn btn-danger" type="button" onClick="history.go(-1)">Cancelar</button>
             </div>
 
 			{!!Form::close()!!}		

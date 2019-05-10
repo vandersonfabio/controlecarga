@@ -42,13 +42,24 @@ class SetorController extends Controller
 
     }
 
-    public function create(){
-        $postos = DB::table('posto')
-                        ->get();
-        $policiais = DB::table('policial')
+    public function create(){        
+        $policiais = DB::table('policial as pol')
+                        ->join('posto as p', 'pol.idPosto', '=', 'p.id')                
+                        ->select(
+                            'pol.id',
+                            'pol.matricula',
+                            'pol.nomeFuncional',
+                            'pol.nomeCompleto',
+                            'pol.isActive',
+                            'pol.idPosto',                    
+                            'p.descricao as descricaoPosto',
+                            'p.sigla as siglaPosto'
+                        )                        
+                        ->where('pol.isActive', 1)
+                        ->orderBy('pol.idPosto', 'desc')
+                        ->orderBy('pol.nomeCompleto', 'asc')
                         ->get();
         return view("setor.create",[
-            "postos"=>$postos,
             "policiais"=>$policiais
         ]);
     }
@@ -71,13 +82,27 @@ class SetorController extends Controller
     public function edit($id){
 
         $setor = Setor::findOrFail($id);
-        $postos = DB::table('posto')->get();
-        $policiais = DB::table('policial')->get();
+        
+        $policiais = DB::table('policial as pol')
+                ->join('posto as p', 'pol.idPosto', '=', 'p.id')                
+                ->select(
+                    'pol.id',
+                    'pol.matricula',
+                    'pol.nomeFuncional',
+                    'pol.nomeCompleto',
+                    'pol.isActive',
+                    'pol.idPosto',                    
+                    'p.descricao as descricaoPosto',
+                    'p.sigla as siglaPosto'
+                )                        
+                ->where('pol.isActive', 1)
+                ->orderBy('pol.idPosto', 'desc')
+                ->orderBy('pol.nomeCompleto', 'asc')
+                ->get();
         
         return view("setor.edit", 
             [
-                "setor" => $setor,
-                "postos" => $postos,
+                "setor" => $setor,                
                 "policiais" => $policiais
             ]
         );
