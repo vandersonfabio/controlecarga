@@ -31,13 +31,17 @@
                     <td>{{ $it->numTombo}}</td>
                     @if ($it->descricaoSituacao == "Disponível")
                         <td style="color:green">{{ $it->descricaoSituacao}}</td>
+                        <td>
+						    <a href="{{URL::action('ItemController@edit',$it->id)}}"><button class="btn btn-info">Editar</button></a>
+                            <a href="" data-target="#modal-delete-{{$it->id}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>
+					    </td>
 					@else
                         <td>{{ $it->descricaoSituacao}}</td>
-                    @endif
-					<td>
-						<a href="{{URL::action('ItemController@edit',$it->id)}}"><button class="btn btn-info">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$it->id}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>
-					</td>
+                        <td>
+						    <a href="{{URL::action('ItemController@edit',$it->id)}}"><button class="btn btn-info" disabled>Editar</button></a>
+                            <a href="" data-target="#modal-delete-{{$it->id}}" data-toggle="modal"><button class="btn btn-danger" disabled>Excluir</button></a>
+					    </td>
+                    @endif					
 				</tr>
 				@include('item.item.modal')
 				@endforeach

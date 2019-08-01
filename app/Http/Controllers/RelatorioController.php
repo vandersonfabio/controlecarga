@@ -32,8 +32,9 @@ class RelatorioController extends Controller
                     'pol.nomeFuncional as nomeFuncionalResponsavel'
                 )              
                 ->where('a.isActive', 1)
+                ->orderBy('s.descricao','asc')
                 ->distinct()
-                ->paginate(7);            
+                ->paginate(7);
             
             return view('relatorio.index', [
                 "listaSetores" => $setoresEncontrados                

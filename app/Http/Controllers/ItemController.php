@@ -38,9 +38,19 @@ class ItemController extends Controller
                     't.descricao as descricaoTipo',
                     'f.descricao as descricaoFabricante',
                     's.descricao as descricaoSituacao'
-                )             
-                ->where('i.numTombo', 'LIKE', "%".$query.'%')
-                ->where('i.isActive', 1)
+                )
+                ->where([
+                    ['i.modelo', 'LIKE', '%'.$query.'%'],
+                    ['i.isActive', 1]
+                ])
+                ->orWhere([
+                    ['i.numTombo', 'LIKE', '%'.$query.'%'],
+                    ['i.isActive', 1]
+                ])
+                ->orWhere([
+                    ['i.numSerie', 'LIKE', '%'.$query.'%'],
+                    ['i.isActive', 1]
+                ])                
                 ->orderBy('i.id', 'desc')
                 ->paginate(7);
             

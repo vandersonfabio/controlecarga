@@ -21,7 +21,7 @@ class FabricanteController extends Controller
             $fabricantesEncontrados = DB::table('fabricante')
                 ->where('descricao', 'LIKE', $query.'%')
                 ->where('isActive', 1)
-                ->orderBy('id', 'asc')
+                ->orderBy('descricao', 'asc')
                 ->paginate(7);
             
             return view('item.fabricante.index', [

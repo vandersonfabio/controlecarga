@@ -41,10 +41,22 @@ class AlocacaoController extends Controller
                     't.descricao as tipoItem',
                     'f.descricao as fabricanteItem',
                     'sit.descricao as situacaoItem'
-                )             
-                ->where('i.modelo', 'LIKE', "%".$query.'%')
-                ->where('i.isActive', 1)
-                ->where('a.isActive', 1)
+                )
+                ->where([
+                    ['i.modelo', 'LIKE', '%'.$query.'%'],
+                    ['i.isActive', 1],
+                    ['a.isActive', 1]
+                ])
+                ->orWhere([
+                    ['i.numTombo', 'LIKE', '%'.$query.'%'],
+                    ['i.isActive', 1],
+                    ['a.isActive', 1]
+                ])
+                ->orWhere([
+                    ['i.numSerie', 'LIKE', '%'.$query.'%'],
+                    ['i.isActive', 1],
+                    ['a.isActive', 1]
+                ])
                 ->orderBy('a.id', 'desc')
                 ->paginate(7);
             

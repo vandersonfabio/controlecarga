@@ -21,7 +21,7 @@ class TipoController extends Controller
             $tiposEncontrados = DB::table('tipo_item')
                 ->where('descricao', 'LIKE', $query.'%')
                 ->where('isActive', 1)
-                ->orderBy('id', 'asc')
+                ->orderBy('descricao', 'asc')
                 ->paginate(7);
             
             return view('item.tipo.index', [
